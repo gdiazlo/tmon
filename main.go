@@ -49,6 +49,7 @@ const w, h = 960, 540
 func main() {
 
 	port := flag.String("port", "COM3", "Either COMX or /dev/ttySX")
+	flag.Parse()
 
 	c := &serial.Config{Name: *port, Baud: 9600}
 	serialPort, err := serial.OpenPort(c)
